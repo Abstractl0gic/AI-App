@@ -1,15 +1,32 @@
 package main
 
 import (
-		"net/http"
-		"os"
+	"log"
+	"log/slog"
+	"net/http"
+	"os"
 
-		"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	router := chi,NewMux()
+	if err := initEverything(); err != nil {
+			log.Fatal(err)
+	}
+
+	router := chi.NewMux()
 
 	// router.Get("/", )
 
-	log.Fatal(http.ListenAndServe(os.Getenv("HTTP_LISTEN_ADDR", router)))
+	port := os.Getenv("HTTP_LISTEN_ADDR")
+	slog.Info ("application running", "port", port)
+	log.Fatal(http.ListenAndServe(port, router))
+}
+
+func initEverything() error {
+	if err := godotenv.Load(); err != nil {
+		return err
+	}
+	return nil
+}
