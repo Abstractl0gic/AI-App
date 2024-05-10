@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"pictoai/handler"
 
 	"log/slog"
 
@@ -18,7 +19,7 @@ func main() {
 
 	router := chi.NewMux()
 
-	// router.Get("/", )
+	router.Get("/", handler.MakeHandler(handler.HandleHomeIndex))
 
 	port := os.Getenv("HTTP_LISTEN_ADDR")
 	slog.Info("application running", "port", port)
