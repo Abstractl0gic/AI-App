@@ -1,1 +1,1 @@
-# AI-App
+# Picto.AI
