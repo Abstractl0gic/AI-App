@@ -1,5 +1,5 @@
 run: build
-	@./bin/dreampicai
+	@./bin/Picto.AI
 
 install:
 	@go install github.com/a-h/templ/cmd/templ@latest
@@ -18,7 +18,7 @@ templ:
 
 build:
 	@templ generate view
-	@go build -tags dev -o bin/dreampicai main.go 
+	@go build -tags dev -o bin/Picto.AI main.go 
 
 up: ## Database migration up
 	@go run cmd/migrate/main.go up
