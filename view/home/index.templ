@@ -1,5 +1,9 @@
 package home
 
+import "Picto.AI/view/layout"
+
 templ Index() {
-	<h1>Hello from the home page!</h1>
+	@layout.App(true) {
+		<h1>hello from the home page</h1>
+	}
 }

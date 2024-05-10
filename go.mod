@@ -1,4 +1,4 @@
-module pictoai
+module Picto.AI
 
 go 1.22.3
 

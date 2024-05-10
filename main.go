@@ -4,7 +4,8 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"pictoai/handler"
+
+	"Picto.AI/handler"
 
 	"log/slog"
 

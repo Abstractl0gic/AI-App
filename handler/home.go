@@ -1,9 +1,9 @@
 package handler
 
 import (
-	"fmt"
 	"net/http"
-	"pictoai/view/home"
+
+	"Picto.AI/view/home"
 )
 
 func HandleHomeIndex(w http.ResponseWriter, r *http.Request) error {
